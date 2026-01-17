@@ -30,7 +30,7 @@ struct AddExpenseView: View {
                 Section("カテゴリ") {
                     Picker("カテゴリ", selection: $category) {
                         ForEach(Category.allCases) { category in
-                            Text(category.displayName).tag(category)
+                            Text(category.displayName).tag(category) // UIは日本語、保存値はenumのrawValueで分離
                         }
                     }
                     .pickerStyle(.segmented)

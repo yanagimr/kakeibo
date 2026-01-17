@@ -17,7 +17,7 @@ struct ExpenseListView: View {
                 Section {
                     HStack {
                         Text("今週の合計")
-                        Spacer()
+//                        Spacer()
                         Text("¥\(viewModel.weeklyTotal())")
                             .bold()
                     }
@@ -65,5 +65,11 @@ struct ExpenseListView: View {
                 }
             }
         }
+    }
+}
+
+struct ExpenseListView_Previews: PreviewProvider {
+    static var previews: some View {
+        ExpenseListView()
     }
 }

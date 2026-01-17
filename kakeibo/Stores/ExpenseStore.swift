@@ -1,5 +1,7 @@
 import Foundation
 
+// ファイル入出力だけを担当するクラス
+
 final class ExpenseStore {
     private let fileName = "expenses.json"
 

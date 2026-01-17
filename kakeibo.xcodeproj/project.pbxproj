@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		96C046FC2F1B1C2B00B43A87 /* kakeiboApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C046FB2F1B1C2B00B43A87 /* kakeiboApp.swift */; };
 		96C046FE2F1B1C2B00B43A87 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C046FD2F1B1C2B00B43A87 /* ContentView.swift */; };
+		96C047002F1B1C2D00B43A87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96C046FF2F1B1C2D00B43A87 /* Assets.xcassets */; };
+		96C047032F1B1C2D00B43A87 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96C047022F1B1C2D00B43A87 /* Preview Assets.xcassets */; };
+		96C0470D2F1B1C2D00B43A87 /* kakeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0470C2F1B1C2D00B43A87 /* kakeiboTests.swift */; };
+		96C047172F1B1C2D00B43A87 /* kakeiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C047162F1B1C2D00B43A87 /* kakeiboUITests.swift */; };
+		96C047192F1B1C2D00B43A87 /* kakeiboUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C047182F1B1C2D00B43A87 /* kakeiboUITestsLaunchTests.swift */; };
 		96C048012F1B1E0000B43A87 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C048112F1B1E0000B43A87 /* Category.swift */; };
 		96C048022F1B1E0000B43A87 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C048122F1B1E0000B43A87 /* Expense.swift */; };
 		96C048032F1B1E0000B43A87 /* DayTotal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C048132F1B1E0000B43A87 /* DayTotal.swift */; };
@@ -16,11 +21,7 @@
 		96C048052F1B1E0000B43A87 /* ExpenseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C048152F1B1E0000B43A87 /* ExpenseListViewModel.swift */; };
 		96C048062F1B1E0000B43A87 /* ExpenseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C048162F1B1E0000B43A87 /* ExpenseListView.swift */; };
 		96C048072F1B1E0000B43A87 /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C048172F1B1E0000B43A87 /* AddExpenseView.swift */; };
-		96C047002F1B1C2D00B43A87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96C046FF2F1B1C2D00B43A87 /* Assets.xcassets */; };
-		96C047032F1B1C2D00B43A87 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96C047022F1B1C2D00B43A87 /* Preview Assets.xcassets */; };
-		96C0470D2F1B1C2D00B43A87 /* kakeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0470C2F1B1C2D00B43A87 /* kakeiboTests.swift */; };
-		96C047172F1B1C2D00B43A87 /* kakeiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C047162F1B1C2D00B43A87 /* kakeiboUITests.swift */; };
-		96C047192F1B1C2D00B43A87 /* kakeiboUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C047182F1B1C2D00B43A87 /* kakeiboUITestsLaunchTests.swift */; };
+		96C049002F1B200000B43A87 /* Previews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C049012F1B200000B43A87 /* Previews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,13 +45,6 @@
 		96C046F82F1B1C2B00B43A87 /* kakeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kakeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96C046FB2F1B1C2B00B43A87 /* kakeiboApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kakeiboApp.swift; sourceTree = "<group>"; };
 		96C046FD2F1B1C2B00B43A87 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		96C048112F1B1E0000B43A87 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		96C048122F1B1E0000B43A87 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
-		96C048132F1B1E0000B43A87 /* DayTotal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTotal.swift; sourceTree = "<group>"; };
-		96C048142F1B1E0000B43A87 /* ExpenseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseStore.swift; sourceTree = "<group>"; };
-		96C048152F1B1E0000B43A87 /* ExpenseListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseListViewModel.swift; sourceTree = "<group>"; };
-		96C048162F1B1E0000B43A87 /* ExpenseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseListView.swift; sourceTree = "<group>"; };
-		96C048172F1B1E0000B43A87 /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
 		96C046FF2F1B1C2D00B43A87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96C047022F1B1C2D00B43A87 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		96C047082F1B1C2D00B43A87 /* kakeiboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kakeiboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +52,14 @@
 		96C047122F1B1C2D00B43A87 /* kakeiboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kakeiboUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96C047162F1B1C2D00B43A87 /* kakeiboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kakeiboUITests.swift; sourceTree = "<group>"; };
 		96C047182F1B1C2D00B43A87 /* kakeiboUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kakeiboUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		96C048112F1B1E0000B43A87 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		96C048122F1B1E0000B43A87 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		96C048132F1B1E0000B43A87 /* DayTotal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTotal.swift; sourceTree = "<group>"; };
+		96C048142F1B1E0000B43A87 /* ExpenseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseStore.swift; sourceTree = "<group>"; };
+		96C048152F1B1E0000B43A87 /* ExpenseListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseListViewModel.swift; sourceTree = "<group>"; };
+		96C048162F1B1E0000B43A87 /* ExpenseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseListView.swift; sourceTree = "<group>"; };
+		96C048172F1B1E0000B43A87 /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
+		96C049012F1B200000B43A87 /* Previews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Previews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			children = (
 				96C046FB2F1B1C2B00B43A87 /* kakeiboApp.swift */,
 				96C046FD2F1B1C2B00B43A87 /* ContentView.swift */,
+				96C049012F1B200000B43A87 /* Previews.swift */,
 				96C048202F1B1E0000B43A87 /* Models */,
 				96C048212F1B1E0000B43A87 /* Stores */,
 				96C048222F1B1E0000B43A87 /* ViewModels */,
@@ -118,6 +121,31 @@
 				96C047012F1B1C2D00B43A87 /* Preview Content */,
 			);
 			path = kakeibo;
+			sourceTree = "<group>";
+		};
+		96C047012F1B1C2D00B43A87 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				96C047022F1B1C2D00B43A87 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		96C0470B2F1B1C2D00B43A87 /* kakeiboTests */ = {
+			isa = PBXGroup;
+			children = (
+				96C0470C2F1B1C2D00B43A87 /* kakeiboTests.swift */,
+			);
+			path = kakeiboTests;
+			sourceTree = "<group>";
+		};
+		96C047152F1B1C2D00B43A87 /* kakeiboUITests */ = {
+			isa = PBXGroup;
+			children = (
+				96C047162F1B1C2D00B43A87 /* kakeiboUITests.swift */,
+				96C047182F1B1C2D00B43A87 /* kakeiboUITestsLaunchTests.swift */,
+			);
+			path = kakeiboUITests;
 			sourceTree = "<group>";
 		};
 		96C048202F1B1E0000B43A87 /* Models */ = {
@@ -153,31 +181,6 @@
 				96C048172F1B1E0000B43A87 /* AddExpenseView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		96C047012F1B1C2D00B43A87 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				96C047022F1B1C2D00B43A87 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		96C0470B2F1B1C2D00B43A87 /* kakeiboTests */ = {
-			isa = PBXGroup;
-			children = (
-				96C0470C2F1B1C2D00B43A87 /* kakeiboTests.swift */,
-			);
-			path = kakeiboTests;
-			sourceTree = "<group>";
-		};
-		96C047152F1B1C2D00B43A87 /* kakeiboUITests */ = {
-			isa = PBXGroup;
-			children = (
-				96C047162F1B1C2D00B43A87 /* kakeiboUITests.swift */,
-				96C047182F1B1C2D00B43A87 /* kakeiboUITestsLaunchTests.swift */,
-			);
-			path = kakeiboUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +322,7 @@
 				96C048042F1B1E0000B43A87 /* ExpenseStore.swift in Sources */,
 				96C048022F1B1E0000B43A87 /* Expense.swift in Sources */,
 				96C046FC2F1B1C2B00B43A87 /* kakeiboApp.swift in Sources */,
+				96C049002F1B200000B43A87 /* Previews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +481,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"kakeibo/Preview Content\"";
+				DEVELOPMENT_TEAM = TX2ND58JFQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -505,6 +510,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"kakeibo/Preview Content\"";
+				DEVELOPMENT_TEAM = TX2ND58JFQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
