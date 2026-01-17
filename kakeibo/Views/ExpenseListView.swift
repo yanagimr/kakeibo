@@ -16,8 +16,13 @@ struct ExpenseListView: View {
             List {
                 Section {
                     HStack {
-                        Text("今週の合計")
-//                        Spacer()
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("今週の合計")
+                            Text(viewModel.weeklyDateRangeText())
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                        Spacer()
                         Text("¥\(viewModel.weeklyTotal())")
                             .bold()
                     }

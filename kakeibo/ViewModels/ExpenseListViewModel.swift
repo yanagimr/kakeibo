@@ -4,6 +4,16 @@ final class ExpenseListViewModel: ObservableObject {
     @Published private(set) var expenses: [Expense] = []
 
     private let store = ExpenseStore()
+    private static let weeklyRangeStartFormatter: DateFormatter = {
+        let formatter = DateFormatweeklyRangeStartFormatterter()
+        formatter.dateFormat = "yyyy/M/d"
+        return formatter
+    }()
+    private static let weeklyRangeEndFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "M/d"
+        return formatter
+    }()
     private var calendar: Calendar {
         var calendar = Calendar(identifier: .gregorian)
         calendar.firstWeekday = 1
@@ -28,6 +38,18 @@ final class ExpenseListViewModel: ObservableObject {
         return expenses
             .filter { interval.contains($0.date) }
             .reduce(0) { $0 + $1.amount }
+    }
+
+    func weeklyDateRangeText() -> String {
+        guard let interval = calendar.dateInterval(of: .weekOfYear, for: Date()) else {
+            return ""
+        }
+        guard let endDate = calendar.date(byAdding: .day, value: 6, to: interval.start) else {
+            return ""
+        }
+        let startText = Self.weeklyRangeStartFormatter.string(from: interval.start)
+        let endText = Self.weeklyRangeEndFormatter.string(from: endDate)
+        return "\(startText)-\(endText)"
     }
 
     func weeklyDayTotals() -> [DayTotal] {
