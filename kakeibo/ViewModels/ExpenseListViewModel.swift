@@ -5,7 +5,7 @@ final class ExpenseListViewModel: ObservableObject {
 
     private let store = ExpenseStore()
     private static let weeklyRangeStartFormatter: DateFormatter = {
-        let formatter = DateFormatweeklyRangeStartFormatterter()
+        let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/M/d"
         return formatter
     }()
