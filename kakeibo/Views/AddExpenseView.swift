@@ -7,8 +7,15 @@ struct AddExpenseView: View {
     @State private var amountText = ""
     @State private var category: Category = .food
     @State private var memo = ""
+    @State private var isPresentingDatePicker = false
 
     let onSave: (Date, Int, Category, String) -> Void
+
+    private static let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/M/d"
+        return formatter
+    }()
 
     private var amountValue: Int? {
         Int(amountText)
@@ -18,8 +25,17 @@ struct AddExpenseView: View {
         NavigationStack {
             Form {
                 Section("日付") {
-                    DatePicker("", selection: $date, displayedComponents: .date)
-                        .datePickerStyle(.graphical)
+                    HStack {
+                        Text(Self.dateFormatter.string(from: date))
+                        Spacer()
+                        Button {
+                            isPresentingDatePicker = true
+                        } label: {
+                            Image(systemName: "calendar")
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityLabel("カレンダーを開く")
+                    }
                 }
 
                 Section("金額") {
@@ -56,6 +72,21 @@ struct AddExpenseView: View {
                         dismiss()
                     }
                     .disabled(amountValue == nil || amountValue == 0)
+                }
+            }
+            .sheet(isPresented: $isPresentingDatePicker) {
+                NavigationStack {
+                    DatePicker("日付", selection: $date, displayedComponents: .date)
+                        .datePickerStyle(.graphical)
+                        .padding(.horizontal)
+                        .navigationTitle("日付を選択")
+                        .toolbar {
+                            ToolbarItem(placement: .confirmationAction) {
+                                Button("完了") {
+                                    isPresentingDatePicker = false
+                                }
+                            }
+                        }
                 }
             }
         }
