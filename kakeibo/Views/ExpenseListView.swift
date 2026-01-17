@@ -56,7 +56,7 @@ struct ExpenseListView: View {
                     }
                 }
             }
-            .navigationTitle("家計簿")
+            .navigationTitle("お金たまる君")
             .toolbar {
                 Button {
                     isPresentingAdd = true
