@@ -5,11 +5,6 @@ final class ExpenseListViewModel: ObservableObject {
     @Published private(set) var expenses: [Expense] = []
 
     private let store: ExpenseStore
-    private static let monthlyHeaderFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy年M月"
-        return formatter
-    }()
     private let calendar: Calendar
     private let dateProvider: () -> Date
 
@@ -53,7 +48,7 @@ final class ExpenseListViewModel: ObservableObject {
         guard let interval = calendar.dateInterval(of: .month, for: dateProvider()) else {
             return ""
         }
-        return Self.monthlyHeaderFormatter.string(from: interval.start)
+        return makeMonthlyHeaderFormatter().string(from: interval.start)
     }
 
     private func loadExpenses() {
@@ -81,5 +76,12 @@ final class ExpenseListViewModel: ObservableObject {
         var calendar = Calendar(identifier: .gregorian)
         calendar.firstWeekday = 1
         return calendar
+    }
+
+    private func makeMonthlyHeaderFormatter() -> DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy年M月"
+        formatter.timeZone = calendar.timeZone
+        return formatter
     }
 }
