@@ -18,6 +18,16 @@
 - 支出一覧の表示（新しい順）
 - 今月の合計表示
   - 今週の合計も表示（週は日曜始まり、期間表示あり）
+- 目標設定（毎月の目標金額、節約の目的）
+- グラフ可視化（週/⽉の推移）
+
+## 画面ごとの設計
+
+- `docs/screens/ExpenseListView.md`
+- `docs/screens/AddExpenseView.md`
+- `docs/screens/GoalSettingsView.md`
+- `docs/screens/GraphView.md`
+- `docs/screens/FooterNavigation.md`
 
 ## データモデル
 
@@ -44,6 +54,8 @@
 - Views:
   - ExpenseListView（メイン）
   - AddExpenseView（モーダル）
+  - GoalSettingsView
+  - GraphView
 - ViewModel:
   - ExpenseListViewModel が読み込み、保存、並び替え、月合計を担当
 - Store:
