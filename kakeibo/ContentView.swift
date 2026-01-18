@@ -9,7 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ExpenseListView()
+        TabView {
+            ExpenseListView()
+                .tabItem {
+                    Image(systemName: "list.bullet")
+                    Text("支出一覧")
+                }
+            GoalSettingsView()
+                .tabItem {
+                    Image(systemName: "flag")
+                    Text("目標")
+                }
+            GraphView()
+                .tabItem {
+                    Image(systemName: "chart.bar")
+                    Text("グラフ")
+                }
+        }
     }
 }
 
