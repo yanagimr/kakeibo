@@ -1,3 +1,10 @@
 # Xcode user-specific
 xcuserdata/
 *.xcuserstate
+
+# SwiftPM
+.build/
+.swiftpm/
+
+# macOS
+.DS_Store
