@@ -21,9 +21,9 @@ enum Category: String, CaseIterable, Codable, Identifiable {
             case .food:
                 return "食費"
             case .entertainment:
-                return "娯楽"
+                return "生活費"
             case .rent:
-                return "家賃"
+                return "娯楽"
             }
         }
     }

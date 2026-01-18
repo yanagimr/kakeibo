@@ -20,7 +20,7 @@
 ## 3. モデルの追加
 
 - `Category.swift`
-  - 固定カテゴリ（食費・娯楽・家賃）を `enum` で定義。
+  - 固定カテゴリ（食費・生活費・娯楽）を `enum` で定義。
   - `displayName` で日本語ラベルを提供。
 - `Expense.swift`
   - 支出1件の構造体（id, date, amount, category, memo）。
