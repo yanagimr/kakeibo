@@ -4,12 +4,28 @@ struct ExpenseListView: View {
     @StateObject private var viewModel = ExpenseListViewModel()
     @State private var isPresentingAdd = false
 
-    private static let dateFormatter: DateFormatter = {
+    private static let sectionDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
+        formatter.dateFormat = "yyyy/M/d"
         return formatter
     }()
+    private static let calendar: Calendar = {
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.firstWeekday = 1
+        return calendar
+    }()
+
+    private var groupedExpenses: [(date: Date, expenses: [Expense])] {
+        let grouped = Dictionary(grouping: viewModel.expenses) { expense in
+            Self.calendar.startOfDay(for: expense.date)
+        }
+        return grouped
+            .map { key, value in
+                let sorted = value.sorted { $0.date > $1.date }
+                return (date: key, expenses: sorted)
+            }
+            .sorted { $0.date > $1.date }
+    }
 
     var body: some View {
         NavigationStack {
@@ -33,25 +49,29 @@ struct ExpenseListView: View {
                         Text("まだ支出がありません")
                             .foregroundColor(.secondary)
                     } else {
-                        ForEach(viewModel.expenses) { expense in
-                            HStack {
-                                VStack(alignment: .leading, spacing: 4) {
-                                    Text(expense.category.displayName)
-                                        .font(.headline)
-                                    if !expense.memo.isEmpty {
-                                        Text(expense.memo)
-                                            .font(.subheadline)
-                                            .foregroundColor(.secondary)
+                        ForEach(Array(groupedExpenses.enumerated()), id: \.element.date) { groupIndex, group in
+                                Text(Self.sectionDateFormatter.string(from: group.date))
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                                    .textCase(.none)
+                            ForEach(Array(group.expenses.enumerated()), id: \.element.id) { index, expense in
+                                VStack(spacing: 0) {
+                                    HStack {
+                                        VStack(alignment: .leading, spacing: 4) {
+                                            Text(expense.category.displayName)
+                                                .font(.headline)
+                                            if !expense.memo.isEmpty {
+                                                Text(expense.memo)
+                                                    .font(.subheadline)
+                                                    .foregroundColor(.secondary)
+                                            }
+                                        }
+                                        Spacer()
+                                        Text("¥\(expense.amount)")
+                                            .font(.headline)
                                     }
-                                    Text(Self.dateFormatter.string(from: expense.date))
-                                        .font(.caption)
-                                        .foregroundColor(.secondary)
                                 }
-                                Spacer()
-                                Text("¥\(expense.amount)")
-                                    .font(.headline)
                             }
-                            .padding(.vertical, 4)
                         }
                     }
                 }
