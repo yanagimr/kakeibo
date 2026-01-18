@@ -16,7 +16,6 @@
 		96C047192F1B1C2D00B43A87 /* kakeiboUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C047182F1B1C2D00B43A87 /* kakeiboUITestsLaunchTests.swift */; };
 		96C048012F1B1E0000B43A87 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C048112F1B1E0000B43A87 /* Category.swift */; };
 		96C048022F1B1E0000B43A87 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C048122F1B1E0000B43A87 /* Expense.swift */; };
-		96C048032F1B1E0000B43A87 /* DayTotal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C048132F1B1E0000B43A87 /* DayTotal.swift */; };
 		96C048042F1B1E0000B43A87 /* ExpenseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C048142F1B1E0000B43A87 /* ExpenseStore.swift */; };
 		96C048052F1B1E0000B43A87 /* ExpenseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C048152F1B1E0000B43A87 /* ExpenseListViewModel.swift */; };
 		96C048062F1B1E0000B43A87 /* ExpenseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C048162F1B1E0000B43A87 /* ExpenseListView.swift */; };
@@ -54,7 +53,6 @@
 		96C047182F1B1C2D00B43A87 /* kakeiboUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kakeiboUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		96C048112F1B1E0000B43A87 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		96C048122F1B1E0000B43A87 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
-		96C048132F1B1E0000B43A87 /* DayTotal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTotal.swift; sourceTree = "<group>"; };
 		96C048142F1B1E0000B43A87 /* ExpenseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseStore.swift; sourceTree = "<group>"; };
 		96C048152F1B1E0000B43A87 /* ExpenseListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseListViewModel.swift; sourceTree = "<group>"; };
 		96C048162F1B1E0000B43A87 /* ExpenseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseListView.swift; sourceTree = "<group>"; };
@@ -153,7 +151,6 @@
 			children = (
 				96C048112F1B1E0000B43A87 /* Category.swift */,
 				96C048122F1B1E0000B43A87 /* Expense.swift */,
-				96C048132F1B1E0000B43A87 /* DayTotal.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -316,7 +313,6 @@
 				96C048072F1B1E0000B43A87 /* AddExpenseView.swift in Sources */,
 				96C048012F1B1E0000B43A87 /* Category.swift in Sources */,
 				96C046FE2F1B1C2B00B43A87 /* ContentView.swift in Sources */,
-				96C048032F1B1E0000B43A87 /* DayTotal.swift in Sources */,
 				96C048062F1B1E0000B43A87 /* ExpenseListView.swift in Sources */,
 				96C048052F1B1E0000B43A87 /* ExpenseListViewModel.swift in Sources */,
 				96C048042F1B1E0000B43A87 /* ExpenseStore.swift in Sources */,

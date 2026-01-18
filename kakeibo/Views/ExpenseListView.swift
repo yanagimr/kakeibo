@@ -17,13 +17,13 @@ struct ExpenseListView: View {
                 Section {
                     HStack {
                         VStack(alignment: .leading, spacing: 2) {
-                            Text("今週の合計")
-                            Text(viewModel.weeklyDateRangeText())
+                            Text("今月の合計")
+                            Text(viewModel.monthlyDateRangeText())
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                         }
                         Spacer()
-                        Text("¥\(viewModel.weeklyTotal())")
+                        Text("¥\(viewModel.monthlyTotal())")
                             .bold()
                     }
                 }
@@ -56,7 +56,7 @@ struct ExpenseListView: View {
                     }
                 }
             }
-            .navigationTitle("お金たまる君")
+            .navigationTitle("家計簿")
             .toolbar {
                 Button {
                     isPresentingAdd = true

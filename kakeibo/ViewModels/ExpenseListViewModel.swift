@@ -4,14 +4,9 @@ final class ExpenseListViewModel: ObservableObject {
     @Published private(set) var expenses: [Expense] = []
 
     private let store = ExpenseStore()
-    private static let weeklyRangeStartFormatter: DateFormatter = {
+    private static let monthlyHeaderFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/M/d"
-        return formatter
-    }()
-    private static let weeklyRangeEndFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "M/d"
+        formatter.dateFormat = "yyyy年M月"
         return formatter
     }()
     private var calendar: Calendar {
@@ -31,8 +26,8 @@ final class ExpenseListViewModel: ObservableObject {
         saveExpenses()
     }
 
-    func weeklyTotal() -> Int {
-        guard let interval = calendar.dateInterval(of: .weekOfYear, for: Date()) else {
+    func monthlyTotal() -> Int {
+        guard let interval = calendar.dateInterval(of: .month, for: Date()) else {
             return 0
         }
         return expenses
@@ -40,35 +35,11 @@ final class ExpenseListViewModel: ObservableObject {
             .reduce(0) { $0 + $1.amount }
     }
 
-    func weeklyDateRangeText() -> String {
-        guard let interval = calendar.dateInterval(of: .weekOfYear, for: Date()) else {
+    func monthlyDateRangeText() -> String {
+        guard let interval = calendar.dateInterval(of: .month, for: Date()) else {
             return ""
         }
-        guard let endDate = calendar.date(byAdding: .day, value: 6, to: interval.start) else {
-            return ""
-        }
-        let startText = Self.weeklyRangeStartFormatter.string(from: interval.start)
-        let endText = Self.weeklyRangeEndFormatter.string(from: endDate)
-        return "\(startText)-\(endText)"
-    }
-
-    func weeklyDayTotals() -> [DayTotal] {
-        guard let interval = calendar.dateInterval(of: .weekOfYear, for: Date()) else {
-            return []
-        }
-        return (0..<7).compactMap { offset in
-            guard let day = calendar.date(byAdding: .day, value: offset, to: interval.start) else {
-                return nil
-            }
-            let startOfDay = calendar.startOfDay(for: day)
-            guard let endOfDay = calendar.date(byAdding: .day, value: 1, to: startOfDay) else {
-                return nil
-            }
-            let total = expenses
-                .filter { $0.date >= startOfDay && $0.date < endOfDay }
-                .reduce(0) { $0 + $1.amount }
-            return DayTotal(date: startOfDay, total: total)
-        }
+        return Self.monthlyHeaderFormatter.string(from: interval.start)
     }
 
     private func loadExpenses() {
