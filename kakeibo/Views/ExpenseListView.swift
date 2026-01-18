@@ -27,6 +27,11 @@ struct ExpenseListView: View {
             .sorted { $0.date > $1.date }
     }
 
+    private func differenceText(prefix: String, value: Int) -> String {
+        let sign = value >= 0 ? "+" : "-"
+        return "\(prefix) \(sign)¥\(abs(value))"
+    }
+
     var body: some View {
         NavigationStack {
             List {
@@ -34,13 +39,33 @@ struct ExpenseListView: View {
                     HStack {
                         VStack(alignment: .leading, spacing: 2) {
                             Text("今月の合計")
-                            Text(viewModel.monthlyDateRangeText())
+                        }
+                        Spacer()
+                        VStack(alignment: .trailing, spacing: 2) {
+                            Text("¥\(viewModel.monthlyTotal())")
+                                .bold()
+                            Text(differenceText(prefix: "先月比", value: viewModel.monthlyDifference()))
+                                .font(.caption2)
+                                .foregroundColor(.secondary)
+                        }
+                    }
+                }
+                Section {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("今週の合計")
+                            Text(viewModel.weeklyDateRangeText())
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                         }
                         Spacer()
-                        Text("¥\(viewModel.monthlyTotal())")
-                            .bold()
+                        VStack(alignment: .trailing, spacing: 2) {
+                            Text("¥\(viewModel.weeklyTotal())")
+                                .bold()
+                            Text(differenceText(prefix: "先週比", value: viewModel.weeklyDifference()))
+                                .font(.caption2)
+                                .foregroundColor(.secondary)
+                        }
                     }
                 }
 
@@ -76,12 +101,19 @@ struct ExpenseListView: View {
                     }
                 }
             }
-            .navigationTitle("家計簿")
+            .navigationTitle("")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                Button {
-                    isPresentingAdd = true
-                } label: {
-                    Image(systemName: "plus")
+                ToolbarItem(placement: .principal) {
+                    Text(viewModel.monthlyDateRangeText())
+                        .font(.headline)
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        isPresentingAdd = true
+                    } label: {
+                        Image(systemName: "plus")
+                    }
                 }
             }
             .sheet(isPresented: $isPresentingAdd) {
