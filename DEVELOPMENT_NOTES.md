@@ -83,6 +83,8 @@
 - ブランチは `feature/xxx` を作成し、`main` へは直接コミットしない。
 - 作業は `feature/xxx` にコミットして `origin` へ push し、PRで `main` に反映する。
 - MR/PRの本文とタイトルは日本語で記載する。
+- CIはロジックの単体テスト（`swift test`）のみを自動実行する。
+- UIテストは手動ワークフロー（ActionsのUI Tests）で必要時に実行する。
 
 ## よく使うコマンド
 
